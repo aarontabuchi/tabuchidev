@@ -1,0 +1,159 @@
+.main {
+  font-family: Arial, sans-serif;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  padding: 8px;
+  line-height: 1;
+}
+
+.logo {
+  width: 160px;
+  margin: 36px auto 18px;
+}
+
+.search {
+  width: 100%;
+  max-width: 600px;
+  border: 1px solid #dfe1e5;
+  border-radius: 24px;
+}
+
+.search a {
+  text-decoration: none;
+}
+
+.searchResults,
+.hr {
+  display: none;
+}
+
+.search:focus-within.hasResults .searchResults,
+.hasResults .hr {
+  display: block;
+}
+
+.search:focus-within.hasResults.escaped .searchResults, .hr {
+  display: none;
+}
+
+.search:hover,
+.search:focus-within.hasResults {
+  box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
+}
+
+.hr {
+  width: calc(100% - 24px);
+  margin: 0 12px;
+  border: none;
+  border-top: 1px solid #dfe1e5;
+}
+
+.searchContainer {
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+
+.searchBar {
+  display: flex;
+  width: 100%;
+  height: 44px;
+  padding: 4px 8px 4px 16px;
+  overflow: hidden;
+  align-items: center;
+}
+
+.search svg {
+  fill: #9aa0a6;
+  height: 20px;
+}
+
+.searchBar input {
+  flex: 1;
+  height: 25px;
+  font-size: 1rem;
+  padding-left: 14px;
+  border: none;
+  background:transparent;
+}
+
+.searchBar input:focus {
+  outline: none;
+}
+
+.search ul {
+  list-style: none;
+}
+
+.searchResult {
+  padding: 6px 8px 6px 16px;
+  font-size: 1rem;
+  height: 30px;
+  display: flex;
+  align-items: center;
+}
+
+.searchResults ul {
+  padding: 0;
+  margin: 0;
+}
+
+.searchResults a:first-child li {
+  margin-top: 6px;
+}
+
+.searchResults a:last-child li {
+  margin-bottom: 16px;
+}
+
+.active {
+  background-color: #eee;
+}
+
+.bold {
+  font-weight: bold;
+  color: #212121;
+}
+
+.resultString {
+  padding-left: 14px;
+}
+
+.clearIcon {
+  display: none;
+  padding: 0 8px;
+}
+
+.clearIcon svg {
+  height: 24px;
+}
+
+.clearIconActive {
+  display: block;
+}
+
+@media screen and (min-width: 600px) {
+  .logo {
+    width: 350px;
+    margin: 0 auto;
+    margin-top: clamp(16px, calc(100vh - 480px), 200px);
+    margin-bottom: 24px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .main:focus-within .logo {
+    display: none;
+  }
+  .main:focus-within .search {
+    border: none;
+    box-shadow: none;
+  }
+  .main:focus-within .searchResults, .main:focus-within .hr {
+    display: block;
+  }
+}
