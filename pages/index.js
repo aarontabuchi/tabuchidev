@@ -8,7 +8,7 @@ gsap.registerPlugin(ScrollToPlugin, ScrollTrigger);
 import React from "react";
 import Search from "../components/Search";
 import Contact from "../components/Contact";
-import { ExternalLink } from "../components/svgs";
+import { ExternalLink, ArrowDown } from "../components/svgs";
 
 export default function Home() {
   const colors = {
@@ -44,13 +44,6 @@ export default function Home() {
         end: "+=100",
         toggleActions: "none play none reverse",
       },
-    });
-
-    ScrollTrigger.create({
-      trigger: "#prettywiki",
-      pin: "#prettywikicontent",
-      start: "top 30%",
-      end: "+=200",
     });
 
     gsap.to("html", {
@@ -144,6 +137,7 @@ export default function Home() {
           <div className={styles.buttons}>
             <button type="button" onClick={scrollToSearch}>
               Test it live
+              <ArrowDown />
             </button>
             <a
               href="https://github.com/aarontabuchi/prettywiki#bonus-google-homepage-visual-bug"

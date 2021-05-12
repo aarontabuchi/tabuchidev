@@ -41,7 +41,6 @@
   background-size: 400% auto;
   background-clip: text;
   -webkit-background-clip: text;
-  text-fill-color: transparent;
   -webkit-text-fill-color: transparent;
   animation: flow 3s ease-in-out infinite alternate-reverse;
 }
@@ -97,6 +96,7 @@ a.fakeButton {
   color: var(--background);
   background-color: var(--color);
   padding: 0 18px;
+  padding-right: 16px;
   border-radius: 18px;
   border: 1px solid var(--color);
   transition: all 250ms ease-in-out;
@@ -109,12 +109,11 @@ a.fakeButton:hover {
   text-decoration: none;
 }
 
-a.fakeButton:hover svg {
+a.fakeButton:hover svg, .main button:hover svg {
   stroke: var(--color);
 }
 
 a.fakeButton {
-  padding-right: 14px;
   text-decoration: none;
 }
 
