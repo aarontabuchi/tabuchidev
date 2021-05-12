@@ -1,6 +1,6 @@
-import {SearchIcon, ClearIcon} from "./svgs";
+import { SearchIcon, ClearIcon } from "./svgs";
 import { useEffect, useState } from "react";
-import styles from "../../styles/Search.module.css";
+import styles from "../styles/Search.module.css";
 
 export default function Search() {
   let wikiSearchURL =

@@ -6,9 +6,9 @@ import { ScrollToPlugin } from "gsap/dist/ScrollToPlugin";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 gsap.registerPlugin(ScrollToPlugin, ScrollTrigger);
 import React from "react";
-import Search from "./components/Search";
-import Contact from "./components/Contact";
-import {ExternalLink} from "./components/svgs";
+import Search from "../components/Search";
+import Contact from "../components/Contact";
+import { ExternalLink } from "../components/svgs";
 
 export default function Home() {
   const colors = {
@@ -64,7 +64,7 @@ export default function Home() {
         toggleActions: "none play none reverse",
       },
     });
-    
+
     gsap.to("html", {
       immediateRender: false,
       "--background": colors["bg-beige"],
@@ -88,7 +88,6 @@ export default function Home() {
         toggleActions: "none play none reverse",
       },
     });
-
   }, []);
 
   return (
