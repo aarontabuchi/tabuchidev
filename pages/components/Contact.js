@@ -1,7 +1,5 @@
 import styles from "../../styles/Contact.module.css";
-import GithubIcon from "./GithubIcon";
-import MailIcon from "./MailIcon";
-import LinkedinIcon from "./LinkedinIcon";
+import {LinkedinIcon, MailIcon, GithubIcon} from "./svgs";
 
 export default function Contact() {
   return (

@@ -8,7 +8,7 @@ gsap.registerPlugin(ScrollToPlugin, ScrollTrigger);
 import React from "react";
 import Search from "./components/Search";
 import Contact from "./components/Contact";
-import ExternalLink from "./components/ExternalLink";
+import {ExternalLink} from "./components/svgs";
 
 export default function Home() {
   const colors = {

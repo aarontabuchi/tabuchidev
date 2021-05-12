@@ -1,5 +1,4 @@
-import SearchIcon from "./SearchIcon.js";
-import ClearIcon from "./ClearIcon.js";
+import {SearchIcon, ClearIcon} from "./svgs";
 import { useEffect, useState } from "react";
 import styles from "../../styles/Search.module.css";
 
