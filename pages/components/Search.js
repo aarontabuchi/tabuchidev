@@ -51,8 +51,6 @@ export default function Search() {
       setIsEscaped(false);
     });
 
-    searchInput.blur();
-
     return () => {
       searchInput.removeEventListener("keyup", (e) => handleKeyUp(e));
       searchInput.removeEventListener("keydown", (e) => handleKeyDown(e));
@@ -79,7 +77,7 @@ export default function Search() {
             <input
               type="text"
               id="searchInput"
-              autoFocus
+              autoFocus={false}
               value={searchInput.input}
               autoComplete="off"
               aria-label="Search"

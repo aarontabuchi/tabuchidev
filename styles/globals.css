@@ -69,21 +69,38 @@ select {
 
 /* CSS reset from https://piccalil.li/blog/a-modern-css-reset */
 
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans&display=swap');
 
-h1 {
-  font-size: 2.4rem;
+html {
+  --color: #00116A;
+  --background: #E4D3B9;
 }
 
-p {
+h2 {
+  font-size: 1.8rem;
+}
+
+p, button, a {
   font-size: 1.1rem;
 }
 
+svg {
+  stroke: var(--color);
+  position: relative;
+  top: 2px;
+}
+
+button:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
 @media (min-width: 640px) {
-  p {
+  p, button, a {
     font-size: 1.3rem;
   }
 
-  h1 {
-    font-size: 3rem;
+  h2 {
+    font-size: 2.5rem;
   }
 }

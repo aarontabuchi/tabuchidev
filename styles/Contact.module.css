@@ -1,0 +1,52 @@
+form.contact {
+  width: 300px;
+  text-align: left;
+  margin: auto;
+}
+
+.contact legend h3 {
+  margin-bottom: 8px;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.icons svg {
+  height: 60px;
+  width: 60px;
+  margin: 16px;
+  margin-bottom: 32px;
+}
+
+.icons svg:hover {
+  transform: translateY(-8px);
+  transition: all 250ms ease-in-out;
+}
+
+.contact input,
+.contact textarea {
+  border-style: none;
+  border-bottom: solid 1px grey;
+  color: var(--color);
+  display: block;
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 12px;
+  border-radius: 4px;
+}
+
+/* .contact input:focus,
+.contact textarea:focus {
+  outline: 1px dashed orange;
+} */
+
+.contact textarea {
+  height: 160px;
+}
+
+.contact button {
+  font-size: 1.2rem;
+  padding: 0 18px;
+  border-radius: 18px;
+  display: block;
+  margin: 0 auto;
+}

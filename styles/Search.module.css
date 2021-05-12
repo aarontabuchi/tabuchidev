@@ -69,6 +69,7 @@
 
 .search svg {
   fill: #9aa0a6;
+  stroke: none;
   height: 20px;
 }
 

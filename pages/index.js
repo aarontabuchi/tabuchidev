@@ -7,6 +7,8 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 gsap.registerPlugin(ScrollToPlugin, ScrollTrigger);
 import React from "react";
 import Search from "./components/Search";
+import Contact from "./components/Contact";
+import ExternalLink from "./components/ExternalLink";
 
 export default function Home() {
   const colors = {
@@ -24,18 +26,18 @@ export default function Home() {
     "font-indigo": "#00116A",
   };
 
-  
+  const scrollToSearch = () => {
+    gsap.to(window, { duration: 1, scrollTo: "#search" });
+    searchInput.focus({ preventScroll: true });
+  };
+
   useEffect(() => {
     const searchInput = document.getElementById("searchInput");
+    searchInput.addEventListener("click", scrollToSearch);
 
-    searchInput.addEventListener("click", () => {
-      gsap.to(window, { duration: 1, scrollTo: "#search"});
-      searchInput.focus({ preventScroll: true });
-    });
-
-    gsap.to("#main", {
-      backgroundColor: colors["bg-green"],
-      color: colors["font-yellow"],
+    gsap.to("html", {
+      "--background": colors["bg-green"],
+      "--color": colors["font-yellow"],
       scrollTrigger: {
         trigger: "#prettywiki",
         start: "top 80%",
@@ -44,32 +46,17 @@ export default function Home() {
       },
     });
 
-    // gsap.from("#hello", {
-    //   opacity: 0,
-    //   y:100,
-    //   duration: .5,
-    // })
-
-    // gsap.from("#laptop", {
-    //   opacity: 0,
-    //   duration: 1,
-    //   y: 100,
-    //   x: -50,
-    // });
-
-    gsap.from("#prettywikicontent", {
-      y: 500,
-      scrollTrigger: {
-        trigger: "#prettywiki",
-        end: "+=500",
-        scrub: 0.5,
-      },
+    ScrollTrigger.create({
+      trigger: "#prettywiki",
+      pin: "#prettywikicontent",
+      start: "top 30%",
+      end: "+=200",
     });
 
-    gsap.to("#main", {
+    gsap.to("html", {
       immediateRender: false,
-      backgroundColor: "#FFF",
-      color: "#222",
+      "--background": "#FFF",
+      "--color": "#222",
       scrollTrigger: {
         trigger: "#search",
         start: "top 60%",
@@ -77,6 +64,31 @@ export default function Home() {
         toggleActions: "none play none reverse",
       },
     });
+    
+    gsap.to("html", {
+      immediateRender: false,
+      "--background": colors["bg-beige"],
+      "--color": colors["font-indigo"],
+      scrollTrigger: {
+        trigger: "#client",
+        start: "top 60%",
+        end: "+=200",
+        toggleActions: "none play none reverse",
+      },
+    });
+
+    gsap.to("html", {
+      immediateRender: false,
+      "--background": colors["bg-olive"],
+      "--color": colors["font-dark-blue"],
+      scrollTrigger: {
+        trigger: "#contact",
+        start: "top 60%",
+        end: "+=200",
+        toggleActions: "none play none reverse",
+      },
+    });
+
   }, []);
 
   return (
@@ -106,6 +118,7 @@ export default function Home() {
             rel="noopener"
           >
             details here
+            <ExternalLink />
           </a>
           ), as well as laboriously hand-coding my résumé in HTML and CSS (
           <a
@@ -114,27 +127,47 @@ export default function Home() {
             rel="noopener"
           >
             Github
+            <ExternalLink />
           </a>
           ). I'm seeking a position that challenges me to learn and grow every
           day.
         </p>
       </section>
+      <h1>Projects</h1>
       <section className={styles.prettywiki} id="prettywiki">
         <div id="prettywikicontent">
-          <h1 id="h1">PrettyWiki</h1>
+          <h2>PrettyWiki</h2>
           <p>
             A Wikipedia redesign. It sports a search bar with 23+ features
             replicated from Google's search bar and Wikipedia article pages in
             the styles and feel of Medium.
           </p>
-          <p>Scroll down to test it out live, or click here to learn more.</p>
+          <div className={styles.buttons}>
+            <button type="button" onClick={scrollToSearch}>
+              Test it live
+            </button>
+            <a
+              href="https://github.com/aarontabuchi/prettywiki#bonus-google-homepage-visual-bug"
+              target="_blank"
+              rel="noopener"
+              className={styles.fakeButton}
+            >
+              Learn more
+              <ExternalLink />
+            </a>
+          </div>
         </div>
       </section>
-      <div className={styles.searchContainer} id="search">
+      <section className={styles.searchContainer} id="search">
         <Search />
-      </div>
-      <section>
-        <h1>Some content</h1>
+      </section>
+      <section id="client">
+        <h2>Client Website</h2>
+        <p></p>
+      </section>
+      <h1 id="contact">Contact</h1>
+      <section className={styles.contact}>
+        <Contact />
       </section>
     </div>
   );

@@ -1,9 +1,9 @@
 .main {
   text-align: center;
-  background-color: #fcdb86;
+  background-color: var(--background);
   width: 100vw;
   max-width: 100%;
-  color: #391a96;
+  color: var(--color);
   font-family: "Work Sans", sans-serif;
   padding: 16px;
 }
@@ -18,16 +18,20 @@
   text-decoration: none;
 }
 
-.header h1 {
-  font-size: max(2.2rem, 6vw);
-  line-height: 6vw;
-  padding-top: max(48px, 6vh);
-  margin-bottom: calc(max(48px, 10vw) * -1);
-  margin-left: 10vw;
-  text-align: left;
+.main h1 {
+  font-size: clamp(2rem, 4vw, 4rem);
   font-weight: 400;
-  width: fit-content;
+  text-align: left;
+  margin-left: 10vw;
+  padding-top: max(200px, 30vh);
+}
 
+.header h1 {
+  font-size: clamp(2.2rem, 6vw, 6rem);
+  line-height: max(2.2rem, 6vw);
+  padding-top: max(24px, 6vw);
+  margin-bottom: calc(max(48px, 10vw) * -1);
+  width: fit-content;
   background: linear-gradient(
     to right,
     rgba(57, 26, 150, 1) 0%,
@@ -54,15 +58,19 @@
 }
 
 .main section {
-  min-height: max(600px, 90vh);
-  display: flex;
-  flex-direction: column;
+  min-height: max(400px, 50vh);
 }
 
-.prettywiki {
-  margin-top: max(300px, 50vh);
+.main section:not(:first-child) {
+  margin: 0 auto;
+  margin-top: max(100px, 20vh);
+  max-width: 600px;
 }
 
+.main section.contact {
+  margin: 0 auto;
+  padding: 32px 0;
+}
 
 .searchContainer {
   font-family: Arial, sans-serif;
@@ -72,6 +80,42 @@
   flex-direction: column;
   align-content: center;
   align-items: center;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 1rem;
+}
+
+.buttons svg {
+  stroke: var(--background);
+}
+
+.main button,
+a.fakeButton {
+  color: var(--background);
+  background-color: var(--color);
+  padding: 0 18px;
+  border-radius: 18px;
+  border: 1px solid var(--color);
+  transition: all 250ms ease-in-out;
+}
+
+.main button:hover,
+a.fakeButton:hover {
+  background-color: inherit;
+  color: inherit;
+  text-decoration: none;
+}
+
+a.fakeButton:hover svg {
+  stroke: var(--color);
+}
+
+a.fakeButton {
+  padding-right: 14px;
+  text-decoration: none;
 }
 
 @media (min-width: 640px) {
