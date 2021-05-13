@@ -38,7 +38,7 @@ export default function Contact() {
         </label>
         <label>
           Email
-          <input type="email" name="email" placeholder="roger@rf.com" />
+          <input type="email" name="email" placeholder="thegoat@tennis.com" />
         </label>
         <label>
           Message

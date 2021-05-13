@@ -25,15 +25,38 @@ export default function Home() {
     "bg-beige": "#E4D3B9",
     "font-indigo": "#00116A",
   };
-
   const scrollToSearch = () => {
     gsap.to(window, { duration: 1, scrollTo: "#search" });
     searchInput.focus({ preventScroll: true });
   };
 
   useEffect(() => {
+    const scrollButton = document.getElementById("scrollButton");
+
+    const scrollDown = () => {
+      gsap.to(window, {
+        duration: 1,
+        scrollTo: { y: "#scrollButton", offsetY: 100 },
+      });
+    };
+
+    const scrollTop = () => {
+      gsap.to(window, { duration: 1, scrollTo: "#hello", onComplete: addScrollDown });
+    };
+
+    const addScrollUp = () => {
+      scrollButton.removeEventListener("click", scrollDown);
+      scrollButton.addEventListener("click", scrollTop);
+    };
+
+    const addScrollDown = () => {
+      scrollButton.removeEventListener("click", scrollTop);
+      scrollButton.addEventListener("click", scrollDown);
+    };
+
     const searchInput = document.getElementById("searchInput");
     searchInput.addEventListener("click", scrollToSearch);
+    addScrollDown();
 
     gsap.to("html", {
       "--background": colors["bg-green"],
@@ -81,6 +104,26 @@ export default function Home() {
         toggleActions: "none play none reverse",
       },
     });
+
+    gsap.to("#scrollButton", {
+      rotate: 180,
+      onComplete: addScrollUp,
+      scrollTrigger: {
+        trigger: "#end",
+        start: "top 50%",
+        toggleActions: "play none none reverse",
+      },
+    });
+
+    gsap.to("#scrollButton", {
+      onComplete: addScrollDown,
+      scrollTrigger: {
+        trigger: "#end",
+        start: "top 50%",
+        toggleActions: "reset none none play",
+      },
+    });
+
   }, []);
 
   return (
@@ -125,6 +168,16 @@ export default function Home() {
           day.
         </p>
       </section>
+      <button id="scrollButton" className={styles.scrollButton}>
+        <ArrowDown />
+      </button>
+      {/* <button
+        id="scrollButtonUp"
+        className={styles.scrollButton}
+        onClick={scrollDown}
+      >
+        <ArrowDown />
+      </button> */}
       <h1>Projects</h1>
       <section className={styles.prettywiki} id="prettywiki">
         <div id="prettywikicontent">
@@ -140,7 +193,7 @@ export default function Home() {
               <ArrowDown />
             </button>
             <a
-              href="https://github.com/aarontabuchi/prettywiki#bonus-google-homepage-visual-bug"
+              href="https://github.com/aarontabuchi/prettywiki"
               target="_blank"
               rel="noopener"
               className={styles.fakeButton}
@@ -159,7 +212,7 @@ export default function Home() {
         <p></p>
       </section>
       <h1 id="contact">Contact</h1>
-      <section className={styles.contact}>
+      <section id="end" className={styles.contact}>
         <Contact />
       </section>
     </div>
