@@ -74,11 +74,19 @@ select {
 html {
   --color: #391A96;
   --background: #FCDB86;
+}
+
+body {
   font-size: 1.1rem;
+
 }
 
 h2 {
   font-size: 1.8rem;
+}
+
+h3 {
+  font-size: 1.3rem;
 }
 
 svg {
@@ -93,7 +101,7 @@ button:hover {
 }
 
 @media (min-width: 640px) {
-  html {
+  body {
     font-size: 1.3rem;
   }
 

@@ -23,7 +23,6 @@
   font-size: clamp(2rem, 4vw, 4rem);
   font-weight: 400;
   text-align: left;
-  margin-left: 10vw;
   padding-top: max(200px, 30vh);
 }
 
@@ -110,7 +109,8 @@ a.fakeButton:hover {
   text-decoration: none;
 }
 
-a.fakeButton:hover svg, .main button:hover svg {
+a.fakeButton:hover svg,
+.main button:hover svg {
   stroke: var(--color);
 }
 
@@ -136,29 +136,33 @@ a.fakeButton {
     padding: 0 32px 16px;
   }
 
-button.scrollButton {
-  display: block;
-  position: fixed;
-  padding: 0;
-  bottom: 32px;
-  right: 32px;
-  height: 36px;
-  width: 36px;
-  border-radius: 100%;
-  line-height: 1;
-}
+  .main h1 {
+    margin-left: 10vw;
+  }
 
-.scrollButton svg {
-  stroke: var(--background);
-  position: static;
-  height: 32px;
-  width: 32px;
-}
+  button.scrollButton {
+    display: block;
+    position: fixed;
+    padding: 0;
+    bottom: 32px;
+    right: 32px;
+    height: 36px;
+    width: 36px;
+    border-radius: 100%;
+    line-height: 1;
+  }
+
+  .scrollButton svg {
+    stroke: var(--background);
+    position: static;
+    height: 32px;
+    width: 32px;
+  }
 
   .header {
     min-height: 800px;
   }
-  
+
   .main footer {
     font-size: 1rem;
   }
