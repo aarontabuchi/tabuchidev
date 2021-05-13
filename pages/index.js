@@ -33,15 +33,17 @@ export default function Home() {
   useEffect(() => {
     const scrollButton = document.getElementById("scrollButton");
 
-    gsap.defaults({ duration: .5 });
+    gsap.defaults({ duration: 0.5 });
     const scrollDown = () => {
-      gsap.to(window, { duration: .75,
+      gsap.to(window, {
+        duration: 0.75,
         scrollTo: { y: "#scrollButton", offsetY: 100 },
       });
     };
 
     const scrollTop = () => {
-      gsap.to(window, {  duration: 1,
+      gsap.to(window, {
+        duration: 1,
         scrollTo: "#hello",
         onComplete: addScrollDown,
       });
@@ -60,6 +62,11 @@ export default function Home() {
     const searchInput = document.getElementById("searchInput");
     searchInput.addEventListener("click", scrollToSearch);
     addScrollDown();
+
+    gsap.set("html", {
+      "--background": colors["bg-yellow"],
+      "--color": colors["font-purple"],
+    });
 
     gsap.to("html", {
       "--background": colors["bg-green"],
