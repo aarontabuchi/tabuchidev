@@ -1,5 +1,5 @@
 form.contact {
-  width: 300px;
+  width: clamp(300px,100vw - 32px, 500px);
   text-align: left;
   margin: auto;
 }
@@ -33,11 +33,6 @@ form.contact {
   margin-bottom: 12px;
   border-radius: 4px;
 }
-
-/* .contact input:focus,
-.contact textarea:focus {
-  outline: 1px dashed orange;
-} */
 
 .contact textarea {
   height: 160px;

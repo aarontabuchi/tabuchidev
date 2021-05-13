@@ -26,22 +26,25 @@ export default function Home() {
     "font-indigo": "#00116A",
   };
   const scrollToSearch = () => {
-    gsap.to(window, { duration: 1, scrollTo: "#search" });
+    gsap.to(window, { scrollTo: "#search" });
     searchInput.focus({ preventScroll: true });
   };
 
   useEffect(() => {
     const scrollButton = document.getElementById("scrollButton");
 
+    gsap.defaults({ duration: .5 });
     const scrollDown = () => {
-      gsap.to(window, {
-        duration: 1,
+      gsap.to(window, { duration: .75,
         scrollTo: { y: "#scrollButton", offsetY: 100 },
       });
     };
 
     const scrollTop = () => {
-      gsap.to(window, { duration: 1, scrollTo: "#hello", onComplete: addScrollDown });
+      gsap.to(window, {  duration: 1,
+        scrollTo: "#hello",
+        onComplete: addScrollDown,
+      });
     };
 
     const addScrollUp = () => {
@@ -123,7 +126,6 @@ export default function Home() {
         toggleActions: "reset none none play",
       },
     });
-
   }, []);
 
   return (
@@ -171,13 +173,6 @@ export default function Home() {
       <button id="scrollButton" className={styles.scrollButton}>
         <ArrowDown />
       </button>
-      {/* <button
-        id="scrollButtonUp"
-        className={styles.scrollButton}
-        onClick={scrollDown}
-      >
-        <ArrowDown />
-      </button> */}
       <h1>Projects</h1>
       <section className={styles.prettywiki} id="prettywiki">
         <div id="prettywikicontent">
@@ -215,6 +210,19 @@ export default function Home() {
       <section id="end" className={styles.contact}>
         <Contact />
       </section>
+      <footer>
+        <span>
+          Designed and Coded by Aaron Tabuchi |{" "}
+          <a
+            href="https://github.com/aarontabuchi/resume"
+            target="_blank"
+            rel="noopener"
+          >
+            Github
+            <ExternalLink />
+          </a>
+        </span>
+      </footer>
     </div>
   );
 }
