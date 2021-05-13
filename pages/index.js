@@ -214,7 +214,7 @@ export default function Home() {
         <span>
           Designed and Coded by Aaron Tabuchi |{" "}
           <a
-            href="https://github.com/aarontabuchi/resume"
+            href="https://github.com/aarontabuchi/tabuchidev"
             target="_blank"
             rel="noopener"
           >

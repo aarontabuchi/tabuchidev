@@ -147,9 +147,6 @@
 }
 
 @media screen and (max-width: 600px) {
-  .main:focus-within .logo {
-    display: none;
-  }
   .main:focus-within .search {
     border: none;
     box-shadow: none;

@@ -1,13 +1,13 @@
-# Repository for tabuchi.dev
+# Repository for [tabuchi.dev](https://tabuchi.dev)
 
 ## Learnings
 ### Run build on personal computer before pushing changes
-My components folder was in the pages folder which works in development, but not when building the static pages. This is a breaking change and also costs server build time.
+My components folder was in the pages folder which works in development, but not when building the static pages. This was a breaking change and also costs server build time.
 
 ### Keep files tidy
 SVG icons (around 7) are all kept in one file so they can be imported cleanly on one line and not existing as 7 separate files.
 
-`import {LinkedinIcon, MailIcon, GithubIcon} from "./svgs";` instead of 3 lines.
+`import {LinkedinIcon, MailIcon, GithubIcon} from "./svgs";` instead of 3 separate lines of imports.
 
 ### Animations
 GSAP is very cool and powerful. The background and font color changing effect worked easily because GSAP can annimate CSS variables, so I only needed to declare colors for everything once and then set up GSAP to trigger the color changes the root CSS variables and not have to tell GSAP to change the color of each different element.
@@ -16,12 +16,13 @@ e.g. Buttons have background and font colors swapped compared to what the defaul
 I thought GSAP could only affect CSS properties, but it can run callbacks after completing an animation and use JS to affect other changes. Before learning about the callbacks, I was considering having two buttons, one for up and one for down, and then toggling their visibility with GSAP. The callbacks allow me to change the click action of the scrolldown/up button when it hits the bottom/top of the page, so I only need one button. Much simpler.
 
 ### Design
-I stole the design of my site from https://www.pinterestcareers.com/. I copied their colors and idea of changing the background and font color with scrolling.
+I stole the design of my site from [PinterestCareers](https://www.pinterestcareers.com/). I copied their colors and idea of changing the background and font color with scrolling.
 #### Improvements
 Pinterest used CSS classes to change the style of their elements. I used CSS variables so I only have to change the two colors (background-color and font-color) instead of definining what each class should look like and all the elements that it affects. Pinterest used the code below (over 50 lines) just to define one theme (they have 17 and had to do this 17 times). They repeat each color 5 times, so they have to change the code in 5 places if they decide to go with a different color.
 From what I can tell, the only reason to not use CSS variables is if you need to support Internet Explorer.
 
-##### Pinterest Code
+#### Pinterest Code
+##### CSS
 ```css
   /********** color panes & associated font colors **********/
     /**** bright yellow bkg - purple text ****/
@@ -53,7 +54,7 @@ From what I can tell, the only reason to not use CSS variables is if you need to
 .color-yellow header:hover .fusion-mobile-nav-item .fusion-open-submenu,
 .color-yellow header:hover .menu-dropdown .sign-in-link:after, .color-yellow header:hover .menu-dropdown .create-profile-link:after {color: #FFE086; text-decoration:none;}
 ```
-
+##### Javascript
 ```javascript
 // color scroll script full
 function colorscroll(){
@@ -113,6 +114,7 @@ function colorscroll(){
 ```
 
 #### My code to do the same thing
+##### CSS
 ```css
 html {
   --color: #00116A;
@@ -139,7 +141,7 @@ html {
   stroke: var(--color);
 }
 ```
-
+##### Javascript
 ```javascript
 // Have GSAP change the CSS variables when the next section comes in and
 // reverse when it leaves, with a 100px gap/cushion

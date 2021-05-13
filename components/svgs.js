@@ -5,10 +5,10 @@ export function LinkedinIcon() {
       width="20"
       height="20"
       viewBox="0 0 24 24"
-      stroke-width="1.5"
+      strokeWidth="1.5"
       stroke="#673AB7"
       fill="none"
-      stroke-linecap="round"
+      strokeLinecap="round"
       strokeLinejoin="round"
     >
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -28,10 +28,10 @@ export function GithubIcon() {
       width="20"
       height="20"
       viewBox="0 0 24 24"
-      stroke-width="1.5"
+      strokeWidth="1.5"
       stroke="#673AB7"
       fill="none"
-      stroke-linecap="round"
+      strokeLinecap="round"
       strokeLinejoin="round"
     >
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -47,10 +47,10 @@ export function MailIcon() {
       width="20"
       height="20"
       viewBox="0 0 24 24"
-      stroke-width="1.5"
+      strokeWidth="1.5"
       stroke="#673AB7"
       fill="none"
-      stroke-linecap="round"
+      strokeLinecap="round"
       strokeLinejoin="round"
     >
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -67,10 +67,10 @@ export function ExternalLink() {
       width="20"
       height="20"
       viewBox="0 0 24 24"
-      stroke-width="1.5"
+      strokeWidth="1.5"
       stroke="#673AB7"
       fill="none"
-      stroke-linecap="round"
+      strokeLinecap="round"
       strokeLinejoin="round"
     >
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -88,11 +88,11 @@ export function ArrowDown() {
       width="20"
       height="20"
       viewBox="0 0 24 24"
-      stroke-width="1.5"
+      strokeWidth="1.5"
       stroke="#673AB7"
       fill="none"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     >
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
       <line x1="12" y1="5" x2="12" y2="19" />
