@@ -157,7 +157,7 @@ gsap.to("html", {
 });
 ```
 
-Pinterest's complex code also caused them to make a few mistakes. For some reason their buttons are not selected with the color class, so they do not update their color with the rest of the elements. Also, their last section updates background color, but not font color. See both issues in the screenshots below.
+Pinterest's complex code also caused them to make a few mistakes. For some reason their buttons are not selected with the color class, so they do not update their color with the rest of the elements. Also, their last section updates background color, but not font color. See both issues in the screenshots below or go to [PinterestCareers](https://www.pinterestcareers.com/) and scroll down to see it yourself.
 ![screenshot1](./pinterestSS.png)
 
 I really do like the design though (as I have copied the good parts in my website), and want to thank Pinterest for the design and also for not obfuscating their code like others do.

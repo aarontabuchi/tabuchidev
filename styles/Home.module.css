@@ -122,6 +122,11 @@ a.fakeButton {
   display: none;
 }
 
+.main legend h2 {
+  font-size: 1.4rem;
+  text-align: center;
+}
+
 .main footer {
   font-size: 0.7rem;
 }

@@ -1,5 +1,5 @@
 import styles from "../styles/Contact.module.css";
-import {LinkedinIcon, MailIcon, GithubIcon} from "./svgs";
+import { LinkedinIcon, MailIcon, GithubIcon } from "./svgs";
 
 export default function Contact() {
   return (
@@ -25,12 +25,14 @@ export default function Contact() {
       </div>
       <form
         className={styles.contact}
-        name="contact"
+        name="contact-form"
         method="POST"
-        data-netlify="true"
+        action="/contact/success"
+        enctype="application/x-www-form-urlencoded"
       >
+        <input type="hidden" name="form-name" value="contact-form" />
         <legend>
-          <h3>Message me</h3>
+          <h2>Message me</h2>
         </legend>
         <label>
           Name

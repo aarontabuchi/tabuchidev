@@ -211,7 +211,10 @@ export default function Home() {
       </section>
       <section id="client">
         <h2>Client Website</h2>
-        <p></p>
+        <p>
+          I leveraged Next.js's static site generation to pre-render this React
+          website to achieve a perfect 100 Lighthouse score.
+        </p>
       </section>
       <h1 id="contact">Contact</h1>
       <section id="end" className={styles.contact}>
