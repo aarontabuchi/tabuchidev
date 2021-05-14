@@ -27,8 +27,9 @@ export default function Contact() {
         className={styles.contact}
         name="contact-form"
         method="POST"
-        action="/contact/success"
-        enctype="application/x-www-form-urlencoded"
+        data-netlify="true"
+        // action="/contact/success"
+        // enctype="application/x-www-form-urlencoded"
       >
         <input type="hidden" name="form-name" value="contact-form" />
         <legend>
