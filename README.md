@@ -13,12 +13,14 @@ SVG icons (around 7) are all kept in one file so they can be imported cleanly on
 GSAP is very cool and powerful. The background and font color changing effect worked easily because GSAP can annimate CSS variables, so I only needed to declare colors for everything once and then set up GSAP to trigger the color changes the root CSS variables and not have to tell GSAP to change the color of each different element.
 e.g. Buttons have background and font colors swapped compared to what the default text has. GSAP would need to target and change them separately if it couldn't just change the CSS variables.
 
-I thought GSAP could only affect CSS properties, but it can run callbacks after completing an animation and use JS to affect other changes. Before learning about the callbacks, I was considering having two buttons, one for up and one for down, and then toggling their visibility with GSAP. The callbacks allow me to change the click action of the scrolldown/up button when it hits the bottom/top of the page, so I only need one button. Much simpler.
+To create the scroll down button that turns into a return to top button, I was considering having two buttons, one for up and one for down, and then toggling their visibility with GSAP. I thought GSAP could only affect CSS properties, but it can run callbacks after completing an animation and use JS to affect other changes. The callbacks allow me to change the click action of the scroll down/up button when it reaches the bottom/top of the page, so I only need one button. Much simpler and better.
 
 ### Design
 I stole the design of my site from [PinterestCareers](https://www.pinterestcareers.com/). I copied their colors and idea of changing the background and font color with scrolling.
 #### Improvements
-Pinterest used CSS classes to change the style of their elements. I used CSS variables so I only have to change the two colors (background-color and font-color) instead of definining what each class should look like and all the elements that it affects. Pinterest used the code below (over 50 lines) just to define one theme (they have 17 and had to do this 17 times). They repeat each color 5 times, so they have to change the code in 5 places if they decide to go with a different color.
+The buttons on the careers page do not have a hover style (except for the very first button(font color changes to white)), which isn't great UI in my opinion. I made my buttons swap font color and background color on hover which was very easy to code.
+
+Pinterest used CSS classes to change the style of their elements. I used CSS variables so I only have to change the two colors (background-color and font-color) instead of definining what each class should look like and all the elements that it affects. Pinterest used the code below (over 50 lines) just to define one theme (they have 17 themes and had to do this 17 times). They repeat each color 5 times, so they have to change the code in 5 places if they decide to go with a different color.
 From what I can tell, the only reason to not use CSS variables is if you need to support Internet Explorer.
 
 #### Pinterest Code

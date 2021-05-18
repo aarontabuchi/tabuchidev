@@ -20,7 +20,7 @@
 }
 
 .main h1 {
-  font-size: clamp(2rem, 4vw, 4rem);
+  font-size: clamp(2.8rem, 4vw, 4rem);
   font-weight: 400;
   text-align: left;
   padding-top: max(200px, 30vh);
@@ -62,8 +62,14 @@
 
 .main section:not(:first-child) {
   margin: 0 auto;
-  margin-top: max(100px, 20vh);
+  margin-top: 64px;
   max-width: 600px;
+}
+
+.main .prettywiki {
+  min-height: 60px;
+  margin-bottom: 64px;
+  overflow: hidden;
 }
 
 .main section.contact {
@@ -87,8 +93,10 @@
   margin-top: 1rem;
 }
 
-.buttons svg {
+.main button svg,
+.fakeButton svg {
   stroke: var(--background);
+  transition: all 250ms ease-in-out;
 }
 
 .main button,
@@ -99,23 +107,45 @@ a.fakeButton {
   padding-right: 16px;
   border-radius: 18px;
   border: 1px solid var(--color);
-  transition: background-color 250ms ease-in-out, color 250ms ease-in-out;
+  transition: all 250ms ease-in-out;
 }
 
 .main button:hover,
-a.fakeButton:hover {
+.main button:focus,
+a.fakeButton:hover,
+a.fakeButton:focus {
   background-color: inherit;
   color: inherit;
   text-decoration: none;
 }
 
 a.fakeButton:hover svg,
-.main button:hover svg {
+a.fakeButton:focus svg,
+.main button:hover svg,
+.main button:focus svg {
   stroke: var(--color);
+  transition: all 250ms ease-in-out;
 }
 
 a.fakeButton {
   text-decoration: none;
+}
+
+.client p {
+  margin-bottom: 1rem;
+}
+
+.client a {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.image img {
+  border-radius: 8px;
+}
+
+.image {
+  margin-top: 32px;
 }
 
 .scrollButton {
@@ -136,7 +166,7 @@ a.fakeButton {
   width: 14px;
 }
 
-@media (min-width: 640px) {
+@media (min-width: 720px) {
   .main {
     padding: 0 32px 16px;
   }

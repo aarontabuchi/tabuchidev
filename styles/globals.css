@@ -96,7 +96,7 @@ button:hover {
   text-decoration: underline;
 }
 
-@media (min-width: 640px) {
+@media (min-width: 720px) {
   body {
     font-size: 1.3rem;
   }

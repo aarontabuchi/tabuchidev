@@ -9,6 +9,7 @@ import React from "react";
 import Search from "../components/Search";
 import Contact from "../components/Contact";
 import { ExternalLink, ArrowDown } from "../components/svgs";
+import Image from "next/image";
 
 export default function Home() {
   const colors = {
@@ -32,13 +33,38 @@ export default function Home() {
 
   useEffect(() => {
     const scrollButton = document.getElementById("scrollButton");
+    const projects = document.getElementById("projects");
+    const search = document.getElementById("search");
+    const client = document.getElementById("client");
+    const contact = document.getElementById("contact");
 
     gsap.defaults({ duration: 0.5 });
+
     const scrollDown = () => {
-      gsap.to(window, {
-        duration: 0.75,
-        scrollTo: { y: "#scrollButton", offsetY: 100 },
-      });
+      if (projects.getBoundingClientRect().top > 10) {
+        return gsap.to(window, {
+          duration: 0.75,
+          scrollTo: { y: "#projects" },
+        });
+      }
+      if (search.getBoundingClientRect().top > 10) {
+        return gsap.to(window, {
+          duration: 0.75,
+          scrollTo: { y: "#search" },
+        });
+      }
+      if (client.getBoundingClientRect().top > 10) {
+        return gsap.to(window, {
+          duration: 0.75,
+          scrollTo: { y: "#client" },
+        });
+      }
+      if (contact.getBoundingClientRect().top > 10) {
+        return gsap.to(window, {
+          duration: 0.75,
+          scrollTo: { y: "#contact", offsetY: -100 },
+        });
+      }
     };
 
     const scrollTop = () => {
@@ -97,8 +123,7 @@ export default function Home() {
       "--color": colors["font-indigo"],
       scrollTrigger: {
         trigger: "#client",
-        start: "top 60%",
-        end: "+=200",
+        end: "+=100",
         toggleActions: "none play none reverse",
       },
     });
@@ -109,7 +134,7 @@ export default function Home() {
       "--color": colors["font-dark-blue"],
       scrollTrigger: {
         trigger: "#contact",
-        start: "top 60%",
+        start: "top 90%",
         end: "+=200",
         toggleActions: "none play none reverse",
       },
@@ -119,8 +144,7 @@ export default function Home() {
       rotate: 180,
       onComplete: addScrollUp,
       scrollTrigger: {
-        trigger: "#end",
-        start: "top 50%",
+        trigger: "#send",
         toggleActions: "play none none reverse",
       },
     });
@@ -128,9 +152,19 @@ export default function Home() {
     gsap.to("#scrollButton", {
       onComplete: addScrollDown,
       scrollTrigger: {
-        trigger: "#end",
-        start: "top 50%",
+        trigger: "#send",
         toggleActions: "reset none none play",
+      },
+    });
+
+    gsap.from("#prettywikicontent", {
+      duration: 1,
+      yPercent: 100,
+      scrollTrigger: {
+        trigger: "#projects",
+        start: "bottom 70%",
+        end: "+=100",
+        toggleActions: "none play none reverse",
       },
     });
   }, []);
@@ -169,6 +203,8 @@ export default function Home() {
             href="https://github.com/aarontabuchi/resume"
             target="_blank"
             rel="noopener"
+            role="button"
+            tabIndex={0}
           >
             Github
             <ExternalLink />
@@ -180,7 +216,7 @@ export default function Home() {
       <button id="scrollButton" className={styles.scrollButton}>
         <ArrowDown />
       </button>
-      <h1>Projects</h1>
+      <h1 id="projects">Projects</h1>
       <section className={styles.prettywiki} id="prettywiki">
         <div id="prettywikicontent">
           <h2>PrettyWiki</h2>
@@ -209,12 +245,31 @@ export default function Home() {
       <section className={styles.searchContainer} id="search">
         <Search />
       </section>
-      <section id="client">
+      <section id="client" className={styles.client}>
         <h2>Client Website</h2>
         <p>
           I leveraged Next.js's static site generation to pre-render this React
-          website to achieve a perfect 100 Lighthouse score.
+          website, maximizing performance and SEO to achieve a perfect 100
+          Lighthouse score.
         </p>
+        <a
+          href="https://akashachamberlain.com/portfolio/"
+          target="_blank"
+          rel="noopener"
+          className={styles.fakeButton}
+        >
+          See it live
+          <ExternalLink />
+        </a>
+        <div className={styles.image}>
+          <Image
+            src="/clientsiterecording.gif"
+            alt="Client site laptop version"
+            layout="responsive"
+            width="800"
+            height="640"
+          />
+        </div>
       </section>
       <h1 id="contact">Contact</h1>
       <section id="end" className={styles.contact}>
