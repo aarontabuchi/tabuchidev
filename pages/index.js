@@ -27,7 +27,7 @@ export default function Home() {
     "font-indigo": "#00116A",
   };
   const scrollToSearch = () => {
-    gsap.to(window, { scrollTo: "#search" });
+    gsap.to(window, { duration: 0.75, scrollTo: "#search" });
     searchInput.focus({ preventScroll: true });
   };
 
@@ -184,7 +184,13 @@ export default function Home() {
           I'm Aaron
         </h1>
         <div className="hero">
-          <img src="./laptop.png" alt="Aaron using his laptop" id="laptop" />
+        <Image
+            src="/laptop.png"
+            alt="Aaron using his laptop"
+            layout="responsive"
+            width="391"
+            height="222"
+          />
         </div>
         <p>
           I'm a meticulous software developer who takes pride in my work and
@@ -213,7 +219,7 @@ export default function Home() {
           day.
         </p>
       </section>
-      <button id="scrollButton" className={styles.scrollButton}>
+      <button id="scrollButton" className={styles.scrollButton} aria-label="Scroll Button">
         <ArrowDown />
       </button>
       <h1 id="projects">Projects</h1>

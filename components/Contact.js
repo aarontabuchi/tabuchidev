@@ -5,13 +5,14 @@ export default function Contact() {
   return (
     <>
       <div className={styles.icons}>
-        <a href="mailto:aaronbuchi@gmail.com">
+        <a href="mailto:aaronbuchi@gmail.com" aria-label="Email Aaron">
           <MailIcon />
         </a>
         <a
           href="https://github.com/aarontabuchi/"
           target="_blank"
           rel="noopener"
+          aria-label="Aaron's Github"
         >
           <GithubIcon />
         </a>
@@ -19,6 +20,7 @@ export default function Contact() {
           href="https://www.linkedin.com/in/aarontabuchi/"
           target="_blank"
           rel="noopener"
+          aria-label="Aaron's Linkedin"
         >
           <LinkedinIcon />
         </a>
@@ -36,17 +38,28 @@ export default function Contact() {
         </legend>
         <label>
           Name
-          <input type="text" name="name" placeholder="Roger Federer" required/>
+          <input type="text" name="name" placeholder="Roger Federer" required />
         </label>
         <label>
           Email
-          <input type="email" name="email" placeholder="thegoat@tennis.com" required/>
+          <input
+            type="email"
+            name="email"
+            placeholder="thegoat@tennis.com"
+            required
+          />
         </label>
         <label>
           Message
-          <textarea name="message" placeholder="Let's play!" required></textarea>
+          <textarea
+            name="message"
+            placeholder="Let's play!"
+            required
+          ></textarea>
         </label>
-        <button type="submit" id="send">Send</button>
+        <button type="submit" id="send">
+          Send
+        </button>
       </form>
     </>
   );

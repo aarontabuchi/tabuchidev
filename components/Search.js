@@ -68,6 +68,8 @@ export default function Search() {
         className={styles.logo}
         src="/prettywikilogo.svg"
         alt="PrettyWiki logo"
+        width="350"
+        height="75"
       ></img>
       <div className={`${classes} ${isEscaped ? styles.escaped : ""}`}>
         <div className={styles.searchContainer}>

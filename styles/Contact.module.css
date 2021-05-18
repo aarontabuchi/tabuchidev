@@ -17,7 +17,9 @@ form.contact {
 }
 
 .icons svg:hover, .icons a:focus-within svg {
-  transform: translateY(-8px);
+  fill: var(--color);
+  stroke: var(--background);
+  transform: scale(1.1);
   transition: all 250ms ease-in-out;
 }
 
