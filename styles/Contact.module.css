@@ -16,7 +16,7 @@ form.contact {
   margin-bottom: 32px;
 }
 
-.icons svg:hover {
+.icons svg:hover, .icons a:focus-within svg {
   transform: translateY(-8px);
   transition: all 250ms ease-in-out;
 }

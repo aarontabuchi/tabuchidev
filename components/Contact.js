@@ -36,17 +36,17 @@ export default function Contact() {
         </legend>
         <label>
           Name
-          <input type="text" name="name" placeholder="Roger Federer" />
+          <input type="text" name="name" placeholder="Roger Federer" required/>
         </label>
         <label>
           Email
-          <input type="email" name="email" placeholder="thegoat@tennis.com" />
+          <input type="email" name="email" placeholder="thegoat@tennis.com" required/>
         </label>
         <label>
           Message
-          <textarea name="message" placeholder="Let's play!"></textarea>
+          <textarea name="message" placeholder="Let's play!" required></textarea>
         </label>
-        <button type="submit">Send</button>
+        <button type="submit" id="send">Send</button>
       </form>
     </>
   );
