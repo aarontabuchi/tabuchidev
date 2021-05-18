@@ -53,6 +53,7 @@
 
 .header img {
   width: clamp(400px, 90vw, 2819px);
+  height: auto;
   margin: 0 auto;
 }
 
@@ -142,6 +143,8 @@ a.fakeButton {
 
 .image img {
   border-radius: 8px;
+  width: 100%;
+  height: auto;
 }
 
 .image {

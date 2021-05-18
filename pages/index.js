@@ -184,12 +184,11 @@ export default function Home() {
           I'm Aaron
         </h1>
         <div className="hero">
-        <Image
+        <img
             src="/laptop.png"
             alt="Aaron using his laptop"
-            layout="responsive"
-            width="391"
-            height="222"
+            width="2851"
+            height="1621"
           />
         </div>
         <p>
@@ -268,12 +267,12 @@ export default function Home() {
           <ExternalLink />
         </a>
         <div className={styles.image}>
-          <Image
+          <img
             src="/clientsiterecording.gif"
             alt="Client site laptop version"
             layout="responsive"
             width="800"
-            height="640"
+            height="645"
           />
         </div>
       </section>
