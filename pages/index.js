@@ -270,7 +270,6 @@ export default function Home() {
           <img
             src="/clientsiterecording.gif"
             alt="Client site laptop version"
-            layout="responsive"
             width="800"
             height="645"
           />
