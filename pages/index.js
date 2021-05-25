@@ -228,7 +228,8 @@ export default function Home() {
           <p>
             A Wikipedia redesign. It sports a search bar with 23+ features
             replicated from Google's search bar and Wikipedia article pages in
-            the styles and feel of Medium.
+            the styles and feel of Medium. Complete end-to-end test coverage
+            using Cypress.js
           </p>
           <div className={styles.buttons}>
             <button type="button" onClick={scrollToSearch}>
@@ -253,7 +254,7 @@ export default function Home() {
       <section id="client" className={styles.client}>
         <h2>Client Website</h2>
         <p>
-          I leveraged Next.js's static site generation to pre-render this React
+          I leveraged Gatsby.js's static site generation to pre-render this React
           website, maximizing performance and SEO to achieve a perfect 100
           Lighthouse score.
         </p>
@@ -272,6 +273,7 @@ export default function Home() {
             alt="Client site laptop version"
             width="800"
             height="645"
+            loading="lazy"
           />
         </div>
       </section>
